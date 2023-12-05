@@ -284,7 +284,7 @@ td {
     padding: 0 20px;
     text-wrap: wrap ;
 }
-#branches-table tr:nth-child(2n) {
+#branches-table tr:nth-child(2n-1) {
     background-color: var(--nude);
 }
 
