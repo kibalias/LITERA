@@ -31,14 +31,10 @@
 nav a {
     text-decoration: none;
     text-transform: uppercase;
-    color: var(--ivory);
+    color: var(--ivory)!important;
     text-shadow: 3px 1px #A38F85;
     font-size: 16px;
-    transition: .3s ease-in-out;
-}
-
-nav a:hover {
-    text-decoration: underline;
+    transition: 1s ease-in-out;
 }
 
 .navbar.scrolled {
@@ -47,6 +43,27 @@ nav a:hover {
 
 .navbar-toggler {
     background-color: white;
+}
+
+.nav-item a {
+    position: relative;
+    transition: 1s ease-in-out;
+}
+.nav-item a::after,
+.nav-item a:after {
+    content: '';
+    position: absolute;
+    background-color: var(--nude);
+    height: 3px;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: all .2s ease-in;
+}
+.nav-item a.active::after,
+.nav-item a:hover:after {
+    opacity: 1;
 }
 
 .brand {
@@ -342,7 +359,11 @@ td {
     }
 }
 
-@media (width <= 768px) {
+.title-separator {
+    margin: auto;
+    margin-bottom: 30px;
+    width: 30%;
+    border:3px dashed #3d1906!important;
 }
 
 @media (width > 768px) {
@@ -374,10 +395,11 @@ td {
         color: white;
         font-weight: bold;
     }
-    /* Services */
+    
     section {
-        padding: 4rem 4rem 5rem 4rem;
+        padding: 6rem 4rem 8rem 4rem;
     }
+    /* Services */
 
     .services-item {
         min-height: auto;
