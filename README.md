@@ -1,5 +1,5 @@
-# LITera
-A repository for a web page design technical exam.
+# LITERA
+A repository for a web page design technical exam of a salon.
 
 ## TOOLS USED
 1. Bootstrap 5.3
