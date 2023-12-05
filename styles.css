@@ -198,9 +198,12 @@ table {
 th {
     overflow: hidden;
     position: relative;
+    max-width: 100px;
+    min-width: 100px;
     height: 200px;
-    padding: 0 2px;
+    padding: 3px 2px;
     cursor: pointer;
+
 }
 th img {
     display: block;
@@ -211,9 +214,25 @@ th img {
     transition: ease-in-out 300ms;
 }
 
-th:hover, th img.zoom-blur{
+th img:hover, th img.zoom-blur{
     filter: blur(2px);
-    transform: scale(1);
+    transform: scale(1.1);
+}
+
+tr {
+    text-align: center;
+    border: 1px dotted var(--latte);
+    border-right: none;
+    border-left: none;
+}
+
+.branch-loc {
+    width: 100%;
+    position: absolute;
+    top:40%;
+    color: antiquewhite;
+    font-size: 20px;
+    z-index: 5;
 }
 
 /* Contact Us Page */
@@ -236,6 +255,7 @@ th:hover, th img.zoom-blur{
     }
     .services-item {
         padding: 2rem;
+        border: #A38F85 dotted 2px;
     }
     .carousel-text {
         font-size: 5rem;
