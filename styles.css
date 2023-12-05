@@ -1,5 +1,3 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap'); */
-/* @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins');
 
@@ -132,7 +130,7 @@ section {
 }
 
 .section-title {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-family: 'Montserrat';
     color: var(--latte);
     margin-bottom: 30px;
@@ -170,7 +168,7 @@ section {
     background-color: var(--nude);
 }
 .aboutus-image {
-    height: 400px;
+    height: 350px;
     width: 100%;
     object-fit: cover;
     object-position: 40% 70%;
@@ -268,8 +266,12 @@ td {
     padding: 0 20px;
     text-wrap: wrap ;
 }
-tr:nth-child(2n) {
+#branches-table tr:nth-child(2n) {
     background-color: var(--nude);
+}
+
+.branch-info p{
+    margin-bottom: 0 !important;
 }
 
 .branch-loc {
@@ -340,6 +342,9 @@ tr:nth-child(2n) {
     }
 }
 
+@media (width <= 768px) {
+}
+
 @media (width > 768px) {
     .navbar {
         background:linear-gradient(to bottom, var(--toned-latte) 2%, rgba(0, 0, 0, 0));
@@ -371,7 +376,7 @@ tr:nth-child(2n) {
     }
     /* Services */
     section {
-        padding: 5rem 4rem;
+        padding: 4rem 4rem 5rem 4rem;
     }
 
     .services-item {
@@ -380,9 +385,7 @@ tr:nth-child(2n) {
         border: #A38F85 dotted 2px;
     }
     /* about us */
-    .aboutus-image{
-        margin-left: 20px;
-    }
+
     /* Testimony */
     .image {
         display: block;
