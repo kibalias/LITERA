@@ -1,8 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins');
 
 :root {
     --rose: #D4B2A7;
@@ -17,7 +16,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Questrial';
+    font-family: 'Poppins';
 }
 
 .col-12 {
@@ -27,7 +26,8 @@
 /* Navbar */
 
 .navbar {
-    background:linear-gradient(to bottom, var(--toned-latte) 2%, rgba(0, 0, 0, 0));
+    background:var(--toned-latte);
+    transition: all .3s ease-in-out;
 }
 
 nav a {
@@ -36,7 +36,21 @@ nav a {
     color: var(--ivory);
     text-shadow: 3px 1px #A38F85;
     font-size: 16px;
+    transition: .3s ease-in-out;
 }
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.navbar.scrolled {
+    background: #A38F85 !important;
+}
+
+.navbar-toggler {
+    background-color: white;
+}
+
 .brand {
     font-family: 'Montserrat';
 }
@@ -47,35 +61,50 @@ nav a {
 }
 
 .carousel-image {
-    filter: blur(1px);
-    filter: saturate(50%);
+    filter: blur(1px)!important;
+    filter: saturate(50%)!important;
 }
 
 .carousel-image:nth-of-type(1) {
     object-position: 20% 60%;
 }
-.first-carousel-caption {
+.first-carousel-caption, .second-carousel-caption, 
+.third-carousel-caption {
     position: absolute;
     width: 100vw;
+}
+.first-carousel-caption {
     top: 50%;
+    animation: downUp 1.5s;
+}
+.second-carousel-caption {
+    top: 30%;
+    padding-right: 4rem;
+    animation: leftRight 1.5s;
 }
 
-.carousel-text, .other-carousel-text, .text {
+.second-carousel-caption .carousel-text {
+    text-align: right;
+}
+.third-carousel-caption {
+    top: 45%;
+    animation: UpDown 1.5s;
+}
+
+.carousel-text, .text {
     font-family: 'Montserrat';
     font-size: 3rem;
     color: white !important;
     z-index: 4;
     line-height: 70%;
     text-align: center;
-    text-shadow: 1px 5px #616161;
+    text-shadow: 1px 3px #616161;
 }
-
 .carousel-text span,
-    .other-carousel-text span,
-    .text span{
-        font-size: 1.5rem;
-        white-space: nowrap;
-    }
+.text span{
+    font-size: 1.5rem;
+    white-space: nowrap;
+}
 
 .scheduleBtn {
     margin-top: 10px;
@@ -111,6 +140,8 @@ section {
 
 /* Services */
 .services-item {
+    max-height: 210px;
+    border: #A38F85 dotted 2px;
     padding: 1.5rem;
 }
 .service-name {
@@ -137,6 +168,17 @@ section {
 /* about us */
 .aboutus {
     background-color: var(--nude);
+}
+.aboutus-image {
+    height: 400px;
+    width: 100%;
+    object-fit: cover;
+    object-position: 40% 70%;
+}
+.aboutus-image,
+.image img {
+    filter: blur(.5px) !important;
+    filter: saturate(50%) !important;
 }
 
 /* Testimonials */
@@ -169,15 +211,13 @@ section {
 }
 .testimony-container:hover{
     box-shadow: #A38F85 3px 5px 10px;
-    transition: all .3s ease-in;
+    transition: all .4s ease-in-out;
 }
 .image {
     display: none;
     z-index: 3;
 }
 .image img{
-    filter: blur(1px);
-    filter: saturate(50%);
     object-fit: cover;
     width: 150px;
     min-height: 180px;
@@ -188,23 +228,29 @@ section {
     background-color: var(--ivory);
 }
 .more-info {
-    border: #A38F85 1px dotted;
+    border: #A38F85 2px dotted;
 }
 .more-info p {
     margin: 0;
 }
+/* --table-- */
 table {
     width: 100%;
+    table-layout: fixed;
+}
+tr {
+    text-align: center;
+    border: 2px dotted var(--latte);
+    border-right: none;
+    border-left: none;
 }
 th {
     overflow: hidden;
     position: relative;
-    max-width: 100px;
-    min-width: 100px;
-    height: 200px;
+    max-width: 180px;
+    height: 100%;
     padding: 3px 2px;
     cursor: pointer;
-
 }
 th img {
     display: block;
@@ -214,17 +260,16 @@ th img {
     object-fit: cover; 
     transition: ease-in-out 300ms;
 }
-
 th img:hover, th img.zoom-blur{
     filter: blur(2px);
     transform: scale(1.1);
 }
-
-tr {
-    text-align: center;
-    border: 1px dotted var(--latte);
-    border-right: none;
-    border-left: none;
+td {
+    padding: 0 20px;
+    text-wrap: wrap ;
+}
+tr:nth-child(2n) {
+    background-color: var(--nude);
 }
 
 .branch-loc {
@@ -240,8 +285,6 @@ tr {
 .contact {
     background-color: var(--nude);
 }
-.contact-form {
-}
 .contact-form input {
     width: 100%;
 }
@@ -250,19 +293,69 @@ tr {
     cursor: pointer;
 }
 
+/* Animations */
+@keyframes downUp {
+    from {
+        transform: translateY(50%);
+    } to {
+        transform: translateY(0);
+    }
+}
+@keyframes UpDown {
+    from {
+        transform: translateY(-120%);
+    } to {
+        transform: translateY(0);
+    }
+}
+@keyframes leftRight {
+    from {
+        transform: translateX(-50%);
+    } to {
+        transform: translateY(0);
+    }
+}
+
+@media (width <= 600px) {
+    .table-header {
+        display: none;
+    }
+    td {
+        display: grid;
+        text-align: left;
+        padding: 3px 0;
+        padding-left: 30px;
+    }
+    td:nth-child(2)::before {
+        content: 'Services Offered: ';
+        font-weight: bold;
+    }
+    td:nth-child(3)::before {
+        content: 'Business hours: ';
+        font-weight: bold;
+    }
+    td:nth-child(4)::before {
+        content: 'Contact Information:  ';
+        font-weight: bold;
+    }
+}
+
 @media (width > 768px) {
+    .navbar {
+        background:linear-gradient(to bottom, var(--toned-latte) 2%, rgba(0, 0, 0, 0));
+    }
+    /* Navbar - Carousel */
     .carousel-image {
         object-position: 100% 60%;
-    }
-    .services-item {
-        padding: 2rem;
-        border: #A38F85 dotted 2px;
     }
     .carousel-text {
         font-size: 5rem;
         line-height: 60%;
     }
-    
+    .carousel-text span{
+        font-size: 2rem;
+        white-space: nowrap;
+    }
     .scheduleBtn {
         margin-top: 20px;
         padding: 10px 30px;
@@ -271,23 +364,32 @@ tr {
         border-radius: 15px;
         box-shadow: 3px 3px 8px rgb(29, 29, 29);
     }
-    
     .scheduleBtn:hover {
         background-color: #616161;
         color: white;
         font-weight: bold;
     }
-
-    .carousel-text span{
-        font-size: 2rem;
-        white-space: nowrap;
-    }
-
+    /* Services */
     section {
         padding: 5rem 4rem;
     }
 
+    .services-item {
+        min-height: auto;
+        padding: 2rem;
+        border: #A38F85 dotted 2px;
+    }
+    /* about us */
+    .aboutus-image{
+        margin-left: 20px;
+    }
+    /* Testimony */
     .image {
         display: block;
+    }
+    /* Branches */
+    th {
+        min-width: 180px;
+        height: 150px;
     }
 }
