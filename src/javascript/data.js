@@ -63,7 +63,8 @@ export const branches = [
             tel: '(02) 633-157', 
             cel: '(+639) 900-105-3167',
             loc: 'Avida Towers, Espana, Sampaloc, Manila'
-        }
+        },
+        img: 'assets/images/pexels-nikko-tan-133689.jpg'
     },
     {
         place: 'Quezon City',
@@ -73,36 +74,40 @@ export const branches = [
             tel: '(02) 673-820', 
             cel: '(+639) 900-346-8641',
             loc: 'Regalla, Cubao, Quezon City'
-        }
+        },
+        img: 'assets/images/pexels-roi-mojado-4975593.jpg'
     },
     {
         place: 'Antipolo',
-        services: 'All Services',
+        services: ['Cut/Style', 'Color', 'Treatments', 'Nails'],
         hours:'10:00 AM - 5:00 PM',
         contact: {
             tel: '(02) 633-123', 
             cel: '(+639) 900-235-9764',
             loc: '123 Penafrancia, Antipolo, Rizal'
-        }
+        },
+        img: 'assets/images/pexels-nikko-tan-133689.jpg'
     },
     {
         place: 'Marilao',
-        services: 'All Services',
+        services: ['Cut/Style', 'Color', 'Treatments', 'Makeup, Lash & Brows', 'Nails', 'Waxing'],
         hours:'10:00 AM - 5:00 PM',
         contact: {
             tel: '(44) 633-405', 
             cel: '(+639) 900-235-8105',
             loc: '183 Sta. Rosa, Marilao, Bulacan'
-        }
+        },
+        img: 'assets/images/pexels-roi-mojado-4975593.jpg'
     },
     {
         place: 'Dagupan',
-        services: 'All Services',
+        services: ['Cut/Style', 'Color', 'Treatments', 'Makeup, Lash & Brows', 'Nails'],
         hours:'8:00 AM - 5:00 PM',
         contact: {
             tel: '(075) 633-450', 
             cel: '(+639) 900-235-8203',
             loc: '11 Arellano St., Dagupan City, Pangasinan'
-        }
-    },
+        },
+        img: 'assets/images/pexels-nikko-tan-133689.jpg'
+    }
 ]
