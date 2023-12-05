@@ -31,6 +31,7 @@ window.addEventListener('load', appendToDiv);
 function appendToDiv () {
     /*
     Parameter needed: div id where data will be appended
+    Method: Loop to the testimonies, get index, and display
     */
 
     testimonies.forEach((testimony, index) => {
