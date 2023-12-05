@@ -59,7 +59,7 @@ function appendToDiv () {
             <th class><div class="branch-loc">`+branch.place+`</div><img src="`+branch.img+`"></th>
             <td><div class="branch-info">`+createListOfService(branch.services)+`</div></td>
             <td>`+branch.hours+`</td>
-            <td><div class="branch-info"><p>`+branch.contact.cel+`</p><p>`+branch.contact.tel+`</p><p>`+branch.contact.loc+`</p></div></td>
+            <td><div class="branch-info"><p>`+branch.contact.tel+`</p><p>`+branch.contact.cel+`</p><p>`+branch.contact.loc+`</p></div></td>
         </tr>`
    })
 }
