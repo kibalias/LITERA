@@ -87,6 +87,10 @@ nav a {
 section {
     padding: 2rem 1.5rem;
 }
+/* intersection observer */
+.hidden { opacity: 1; filter: blur(5px); 
+        transform: translateY(10%); transition: all 2s; }
+.show { opacity: 1; filter: blur(0); transform: translateY(0); }
 .footer {
     padding: 10px;
     text-align: center;
@@ -211,6 +215,10 @@ td { padding: 0 20px; text-wrap: wrap ; }
     color: #333333 !important;
     cursor: pointer;
 }
+.title-separator {
+    margin: auto; margin-bottom: 30px;
+    width: 30%; border:3px dashed #3d1906!important;
+}
 /* Animations */
 @keyframes downUp {
     from { transform: translateY(50%); } 
@@ -225,24 +233,14 @@ td { padding: 0 20px; text-wrap: wrap ; }
     to {transform: translateY(0);}
 }
 
-@media (width <= 600px) {
+@media (width < 768px) {
     .table-header { display: none; }
-    td {
-        display: grid;
-        text-align: left;
-        padding: 3px 0;
-        padding-left: 30px;
-    }
+    tr { display: block; }
+    th {max-width: none; max-height: 50px;}
+    td { display: grid; padding: 10px; }
     td:nth-child(2)::before { content: 'Services Offered: '; font-weight: bold; }
     td:nth-child(3)::before { content: 'Business hours: '; font-weight: bold; }
     td:nth-child(4)::before { content: 'Contact Information:  '; font-weight: bold; }
-}
-
-.title-separator {
-    margin: auto;
-    margin-bottom: 30px;
-    width: 30%;
-    border:3px dashed #3d1906!important;
 }
 
 @media (width > 768px) {

@@ -32,7 +32,6 @@ function setActiveLink() {
         link.classList.remove('active');
         if(link.getAttribute('href').includes('#' + currentSection)){
             link.classList.add('active');
-            console.log(link.getAttribute('href'));
         }
     });
 }
