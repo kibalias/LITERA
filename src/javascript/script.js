@@ -19,6 +19,17 @@ function appendToDiv () {
         alert("Cannot retrieve or display data.");
         return;
     }
+    
+   services.forEach(service => {
+    services_placeholder.innerHTML +=
+    `<div class="services-item col-6 col-md-3 ">
+        <div class="service-icon">
+            `+ service.icon +`
+        </div>
+        <p class="service-name">`+service.name+`</p>   
+    </div>`
+   });
+   
     testimonies.forEach((testimony, index) => {
         testimony_placeholder.innerHTML +=
         `<div class="testimony col-12 col-lg-6">
@@ -33,16 +44,6 @@ function appendToDiv () {
             </div>
         </div>`
     });
-
-   services.forEach(service => {
-    services_placeholder.innerHTML +=
-    `<div class="services-item col-6 col-md-3 ">
-        <div class="service-icon">
-            `+ service.icon +`
-        </div>
-        <p class="service-name">`+service.name+`</p>   
-    </div>`
-   });
 
    branches.forEach(branch => {
     branches_placeholder.innerHTML += 
